@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const docRoutes = require("./routes/docRoutes");
+const authRoutes = require("./routes/authRoutes");
 const askRoutes = require("./routes/askRoutes");
 const errorHandler = require("./middleware/errorHandler");
 
@@ -11,6 +12,7 @@ app.use(morgan("dev"));
 
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 app.use("/api/docs", docRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/ask", askRoutes);
 
 app.use(errorHandler);

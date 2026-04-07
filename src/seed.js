@@ -2,6 +2,7 @@ require("dotenv").config();
 const { connectDB } = require("./config/db");
 const Document = require("./models/Document");
 
+
 const seedDocs = [
   {
     title: "Refund Policy",
